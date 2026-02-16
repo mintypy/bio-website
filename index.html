@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mintphobic</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="enterOverlay">
+        <div id="enterButton">click to enter</div>
+    </div>
+    
+    <div id="roddyricchbox">
+        <img src="minty.png">
+        <h1>minty!</h1>
+        <p>hi! i'm minty, aka mintphobic!</p>
+        <p>she/her</p>
+        <p>i'm the owner of <a href="https://useawp.org">awp</a></p>
+        <p>co-owner of <a href="https://sciencerules.xyz">sciencerules</a></p>
+        <p>and a developer for <a href="https://www.edurocks.org/">edurocks</a></p>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="song.mp3" type="audio/mpeg">
+         Your browser does not support the audio element.
+    </audio>
+
+    <script>
+    const overlay = document.getElementById('enterOverlay');
+    const roddyricchbox = document.getElementById('roddyricchbox');
+    const bgMusic = document.getElementById('bgMusic');
+    const enterButton = document.getElementById('enterButton');
+
+    enterButton.addEventListener('click', () => {
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+        
+        setTimeout(() => {
+            roddyricchbox.style.opacity = '1';
+            roddyricchbox.style.transform = 'scale(1)';
+            bgMusic.play();
+        }, 400);
+    });
+</script>
+</body>
+</html>
