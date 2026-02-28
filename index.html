@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mintphobic</title>
+    <title>minty.py</title>
     <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  </head>
+  <body>
     <div id="enterOverlay">
-        <div id="enterButton">click to enter</div>
+      <div id="enterButton">click to enter</div>
     </div>
-    
     <div id="roddyricchbox">
-        <img src="minty.jpeg">
-        <h1>minty!</h1>
-        <p>hi! i'm minty, aka mintphobic!</p>
-        <p>she/her</p>
-        <p>i'm the owner of <a href="https://useawp.org">awp</a></p>
-        <p>co-owner of <a href="https://sciencerules.xyz">sciencerules</a></p>
-        <p>and a developer for <a href="https://www.edurocks.org/">edurocks</a></p>
+      <img src="yuri v2.png">
+      <h1>minty!</h1>
+      <p>hi! i'm minty, aka mintypy!</p>
+      <p>she/her</p>
+      <p>i'm the owner of <a href="https://useawp.org">awp</a>
+      </p>
+      <p>co-owner of <a href="https://sciencerules.xyz">sciencerules</a>
+      </p>
+      <p>and a developer for <a href="https://www.edurocks.org/">edurocks</a>
+      </p>
+      <div id="music-player">
+        <div class="mp-info">
+          <div class="mp-art" id="mp-art">
+            <img src="/songs/ovt.png">
+          </div>
+          <div class="mp-meta">
+            <div class="mp-title" id="mp-title">red eyes</div>
+            <div class="mp-artist" id="mp-artist">overtonight</div>
+          </div>
+        </div>
+        <div class="mp-progress-wrap">
+          <span class="mp-time" id="mp-cur">0:00</span>
+          <input type="range" class="mp-progress" id="mp-progress" value="0" min="0" max="100" step="0.1">
+          <span class="mp-time" id="mp-dur">0:00</span>
+        </div>
+        <div class="mp-controls">
+          <button class="mp-btn" id="mp-prev" title="Previous">⏮</button>
+          <button class="mp-btn play-pause" id="mp-play" title="Play/Pause">▶</button>
+          <button class="mp-btn" id="mp-next" title="Next">⏭</button>
+          <button class="mp-btn" id="mp-loop" title="Loop" style="font-size:14px;opacity:0.5;">🔁</button>
+        </div>
+        <div class="mp-volume-row">
+          <span class="mp-vol-icon">🔈</span>
+          <input type="range" class="mp-volume" id="mp-volume" value="80" min="0" max="100">
+          <span class="mp-vol-icon">🔊</span>
+        </div>
+        <div class="mp-playlist" id="mp-playlist"></div>
+      </div>
     </div>
-
-    <audio id="bgMusic" loop>
-        <source src="song.mp3" type="audio/mpeg">
-         Your browser does not support the audio element.
-    </audio>
-
-    <script>
-    const overlay = document.getElementById('enterOverlay');
-    const roddyricchbox = document.getElementById('roddyricchbox');
-    const bgMusic = document.getElementById('bgMusic');
-    const enterButton = document.getElementById('enterButton');
-
-    enterButton.addEventListener('click', () => {
-        overlay.style.opacity = '0';
-        overlay.style.pointerEvents = 'none';
-        
-        setTimeout(() => {
-            roddyricchbox.style.opacity = '1';
-            roddyricchbox.style.transform = 'scale(1)';
-            bgMusic.play();
-        }, 400);
-    });
-</script>
-</body>
+    <audio id="mp-audio"></audio>
+    <script type="module">
+      import {
+        fairyDustCursor
+      } from './cursor.js';
+      fairyDustCursor({
+        colors: ["#2D1B69", "#6B21A8", "#C084FC"],
+        fairySymbol: "✦"
+      });
+    </script>
+    <script src="music.js"></script>
+  </body>
 </html>
